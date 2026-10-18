@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /feed.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ site.title | xml_escape }}</title>
+  <link href="{{ "/feed.xml" | absolute_url }}" rel="self"/>
+  <link href="{{ "/" | absolute_url }}"/>
+  <id>{{ "/" | absolute_url }}</id>
+  {% assign dated = site.pages | where_exp: "p", "p.date" | sort: "date" | reverse %}
+  <updated>{% if dated.size > 0 %}{{ dated.first.date | date_to_xmlschema }}{% else %}{{ site.time | date_to_xmlschema }}{% endif %}</updated>
+  {% for p in dated %}
+  <entry>
+    <title>{{ p.title | xml_escape }}</title>
+    <link href="{{ p.url | absolute_url }}"/>
+    <id>{{ p.url | absolute_url }}</id>
+    <updated>{{ p.date | date_to_xmlschema }}</updated>
+  </entry>
+  {% endfor %}
+</feed>

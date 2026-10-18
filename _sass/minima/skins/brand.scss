@@ -1,0 +1,34 @@
+@charset "utf-8";
+
+// The brand skin (profile/brand/README.md, "Site palette"): neutral grey with
+// Papaya as the one accent. Dark: grey #1F2023 with papaya links. Light:
+// near-white with Burnt Papaya links, since papaya as text on light fails
+// (2.4:1); papaya stays as the header line and the link underline
+// (custom-styles.scss).
+
+$base-font-family: "Roboto", system-ui, sans-serif;
+$code-font-family: "JetBrains Mono", monospace;
+
+$lm-brand-color:           #5F6168;
+$lm-site-title-color:      #18191C;
+$lm-heading-color:         #18191C;
+$lm-text-color:            #26272B;
+$lm-background-color:      #FAFAFA;
+$lm-code-background-color: #EFEFF1;
+$lm-border-color-01:       #DCDDE0;
+$lm-link-base-color:       #A64B00;
+$lm-link-visited-color:    #A64B00;
+$lm-link-hover-color:      #18191C;
+
+$dm-brand-color:           #9A9CA3;
+$dm-site-title-color:      #F2F2F3;
+$dm-heading-color:         #F2F2F3;
+$dm-text-color:            #E3E4E6;
+$dm-background-color:      #1F2023;
+$dm-code-background-color: #2A2B2F;
+$dm-border-color-01:       #34363B;
+$dm-link-base-color:       #FF8000;
+$dm-link-visited-color:    #FF8000;
+$dm-link-hover-color:      #F2F2F3;
+
+@import "minima/skins/auto";

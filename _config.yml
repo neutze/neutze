@@ -1,0 +1,58 @@
+# The GitHub Pages site of neutze/neutze, served at https://neutze.de/ (CNAME;
+# GitHub redirects https://neutze.github.io/neutze/ there).
+# Copy of record: athena-career profile/site/. tools/scripts/publish_site.py
+# builds the whole profile repository from that repository; never edit it there.
+title: Johannes Neutze
+description: Engineering Manager in Munich. Long-form guides on building a career on evidence, and on building software with AI agents.
+url: https://neutze.de
+baseurl: ""
+lang: en-US
+permalink: pretty
+
+# minima 3 (MIT, _sass/minima/LICENSE.txt) lives in _layouts, _includes and
+# _sass, because GitHub Pages builds only minima 2 as a gem and a remote theme
+# would make the build need the network. The brand skin is
+# _sass/minima/skins/brand.scss; it follows the reader's light or dark setting.
+# Changed from upstream: the footer loads no Font Awesome from a CDN, and the
+# social links are words on one footer line with Feed and Privacy (Publish
+# Site, rule 15), so no page makes a request to a third party; the stylesheet link
+# carries a version (rule 9).
+minima:
+  skin: brand
+  nav_pages:
+    - blog.md
+    - career/README.md
+    - software/README.md
+    - academia/index.md
+  # One line under every piece (Publish Site, rule 14).
+  author_line: "Written by Johannes Neutze, Engineering Manager at DoorDash / Wolt in Munich."
+  social_links:
+    - title: LinkedIn
+      url: https://www.linkedin.com/in/johannes-neutze
+    - title: GitHub
+      url: https://github.com/neutze
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  # Every page uses the theme's base layout (it prints no title of its own,
+  # so the page's own heading is its one <h1>); the pieces name layout: post.
+  # The preview image a link to any page shows: jekyll-seo-tag reads it from
+  # each page (og:image, a large Twitter card), not from the site. A piece may
+  # name its own. favicon.ico and apple-touch-icon.png sit at the top, where
+  # browsers look for them without a link tag, whatever the theme.
+  - scope:
+      path: ""
+    values:
+      layout: base
+      image: /assets/preview.png
+
+# README.md at the top is the GitHub profile; index.md is the site's home.
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
