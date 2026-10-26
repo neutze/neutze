@@ -1,0 +1,67 @@
+// The brand on top of minima 3 (brand/README.md). The fonts are
+// served from this site, so a page makes no request to a third party.
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fonts/roboto-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("../fonts/roboto-latin-wght-italic.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("../fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: italic; font-weight: 100 800; font-display: swap; src: url("../fonts/jetbrains-mono-latin-wght-italic.woff2") format("woff2"); }
+
+// A papaya line above the header, and the JN logo with its rounded tile
+// before the name (the touch icon is square, since iOS rounds it itself).
+.site-header { border-top: 5px solid #FF8000; }
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  padding-left: 34px;
+  // Raise v here and on the stylesheet link in head.html when the logo changes:
+  // browsers keep the old files (Publish Site, rule 9).
+  background: url("../logo.svg?v=4") left center / 26px 26px no-repeat;
+}
+
+// Links in the text carry a papaya underline, so light mode, where papaya
+// cannot be the text colour, still shows the accent.
+.page-content a {
+  text-decoration: underline;
+  text-decoration-color: #FF8000;
+  text-underline-offset: 3px;
+}
+
+// The phone menu button. minima draws it with a Font Awesome glyph, which
+// this site does not load (no requests to other servers), so it showed an
+// empty box. Three bars drawn in CSS instead, and a cross when open.
+.site-nav #nav-trigger ~ label[for=nav-trigger] .menu-icon::before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 2px;
+  margin-top: -2px;
+  vertical-align: middle;
+  background: currentColor;
+  box-shadow: 0 -6px 0 currentColor, 0 6px 0 currentColor;
+}
+.site-nav #nav-trigger:checked ~ label[for=nav-trigger] .menu-icon::before {
+  content: "\2715";
+  width: auto;
+  height: auto;
+  margin-top: 0;
+  background: none;
+  box-shadow: none;
+  font-family: system-ui, sans-serif;
+  font-size: 1.1em;
+  line-height: 1;
+}
+.site-nav label[for=nav-trigger] .menu-icon { color: $text-color; }
+
+// One line under every piece about its author (Publish Site, rule 14), and
+// the footer's one line of links: LinkedIn, GitHub, Feed, Privacy (rule 15).
+.post-author-line {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid $border-color-01;
+  font-size: 0.9em;
+}
+.footer-links {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: $brand-color-dimmed;
+}

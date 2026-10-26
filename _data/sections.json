@@ -1,0 +1,45 @@
+{
+  "career": {
+    "title": "Career",
+    "summary": "Building a career on evidence: CVs, profiles and interviews that hold up when someone asks how you know."
+  },
+  "career/cv": {
+    "title": "CV and LinkedIn",
+    "summary": "Treating a CV and a LinkedIn profile as renders of one fact base, with AI doing the drafting and checks doing the policing."
+  },
+  "career/interviews": {
+    "title": "Interviews",
+    "summary": "How interviews are graded at each level and in each round, from both sides of the table."
+  },
+  "career/leadership": {
+    "title": "Leadership",
+    "summary": "Decisions I made leading engineering teams, what they cost, and what I would do differently."
+  },
+  "software": {
+    "title": "Software",
+    "summary": "Building and running personal software with AI agents."
+  },
+  "software/agents": {
+    "title": "Working with AI agents",
+    "summary": "Building software with AI agents: what they get wrong, the checks that catch it, and what broke anyway."
+  },
+  "software/spec-first": {
+    "title": "Spec first",
+    "summary": "Writing down what your software should do before an agent changes it."
+  },
+  "software/documents": {
+    "title": "Reading my documents",
+    "summary": "Choosing how to read a personal document archive with local models.",
+    "moved_from": [
+      "software/archive"
+    ]
+  },
+  "software/homelab": {
+    "title": "Running it at home",
+    "summary": "Running my own software on a laptop and a home server, and the small failures that taught me how."
+  },
+  "academia": {
+    "title": "Academia",
+    "summary": "Theses, a paper and a project from my B.Sc. and M.Sc. at TUM, 2012–2016, as the final PDFs."
+  }
+}
