@@ -77,4 +77,4 @@ Nearly everything I build is employer-owned or private, including everything abo
 ## Elsewhere
 
 - [LinkedIn](https://www.linkedin.com/in/johannes-neutze)
-- [github@neutze.de](mailto:github@neutze.de)
+- [johannes@neutze.de](mailto:johannes@neutze.de)
