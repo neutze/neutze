@@ -1,0 +1,6 @@
+// Reading basics (Publish Site, rule 22): 18px text with room between lines,
+// and a column of about 68 characters. The small size follows the base.
+$base-font-size:   18px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.65;
+$content-width:    760px;

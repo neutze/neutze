@@ -1,0 +1,44 @@
+{
+  "P1": {
+    "name": "The lead stepping up",
+    "who": "senior engineer or tech lead, first team",
+    "comes_for": "how to make and defend a call, reviews, specs, saying no with a reason",
+    "primary": true
+  },
+  "P2": {
+    "name": "The new manager",
+    "who": "first one or two years",
+    "comes_for": "capacity talks, postmortems that change policy, hiring, levelling, an inherited team",
+    "primary": true
+  },
+  "P3": {
+    "name": "The builder with agents",
+    "who": "",
+    "comes_for": "copyable setups: specs, gates, merge queues, memory, second-model reviews",
+    "primary": false
+  },
+  "P4": {
+    "name": "The candidate",
+    "who": "",
+    "comes_for": "what a round grades at each level; a CV as a render of facts",
+    "primary": false
+  },
+  "P5": {
+    "name": "The peer leader",
+    "who": "senior EM, director, head of engineering",
+    "comes_for": "leverage beyond the reporting line, platform functions, reliability as a negotiation",
+    "primary": true
+  },
+  "P6": {
+    "name": "The hiring manager",
+    "who": "",
+    "comes_for": "judgment and ownership in five minutes",
+    "primary": false
+  },
+  "P7": {
+    "name": "The recruiter",
+    "who": "",
+    "comes_for": "level, domain, arc, fast",
+    "primary": false
+  }
+}

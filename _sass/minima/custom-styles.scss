@@ -1,0 +1,159 @@
+// The brand on top of minima 3 (brand/README.md). The fonts are
+// served from this site, so a page makes no request to a third party.
+@font-face { font-family: "Roboto"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("../fonts/roboto-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "Roboto"; font-style: italic; font-weight: 100 900; font-display: swap; src: url("../fonts/roboto-latin-wght-italic.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: normal; font-weight: 100 800; font-display: swap; src: url("../fonts/jetbrains-mono-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-style: italic; font-weight: 100 800; font-display: swap; src: url("../fonts/jetbrains-mono-latin-wght-italic.woff2") format("woff2"); }
+
+// A papaya line above the header, and the JN logo with its rounded tile
+// before the name (the touch icon is square, since iOS rounds it itself).
+.site-header { border-top: 5px solid #FF8000; }
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  padding-left: 34px;
+  // Raise v here and on the stylesheet link in head.html when the logo changes:
+  // browsers keep the old files (Publish Site, rule 9).
+  background: url("../logo.svg?v=4") left center / 26px 26px no-repeat;
+}
+
+// Links in the text carry a papaya underline, so light mode, where papaya
+// cannot be the text colour, still shows the accent.
+.page-content a {
+  text-decoration: underline;
+  text-decoration-color: #FF8000;
+  text-underline-offset: 3px;
+}
+
+// One line under every piece about its author (Publish Site, rule 14), and
+// the footer's one line of links: LinkedIn, GitHub, Feed, Privacy (rule 15).
+.post-author-line {
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid $border-color-01;
+  font-size: 0.9em;
+}
+.footer-links {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9em;
+  color: $brand-color-dimmed;
+}
+
+// Reading, access and layout basics (Publish Site, rule 22).
+@media screen and (max-width: $on-palm) { html { font-size: 17px; } body { font-size: 17px; } }
+.page-content .wrapper > * { max-width: 68ch; }
+.page-content .wrapper > .home, .page-content .wrapper > .post { max-width: none; }
+.post-content > *, .home > p, .home > h2 { max-width: 68ch; }
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.01em; }
+
+.skip-link {
+  position: absolute;
+  left: 8px;
+  top: -60px;
+  z-index: 10;
+  padding: 8px 14px;
+  background: $background-color;
+  color: $text-color;
+  border: 2px solid #FF8000;
+  border-radius: 6px;
+}
+.skip-link:focus { top: 8px; }
+a:focus-visible, button:focus-visible, main:focus-visible {
+  outline: 3px solid #FF8000;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+main:focus { outline: none; }
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+// The nav: plain links, wrapped under the name on a phone (rule 12).
+.site-header .wrapper { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: 1.5em; }
+.site-title { float: none; }
+.site-nav {
+  float: none;
+  position: static;
+  border: 0;
+  .nav-items { display: flex; flex-wrap: wrap; column-gap: 1.1em; row-gap: 0; }
+  .nav-item {
+    display: inline-block;
+    margin: 0 !important;
+    padding: 10px 0;
+    line-height: 1.4;
+    color: $text-color;
+    text-decoration: none;
+  }
+  .nav-item[aria-current] { box-shadow: inset 0 -3px 0 #FF8000; }
+}
+@media screen and (max-width: $on-palm) {
+  .site-header { min-height: 0; }
+  .site-header .wrapper { padding-top: 6px; padding-bottom: 4px; }
+  .site-title { line-height: 48px; }
+  .site-nav { width: 100%; padding-bottom: 4px; }
+  .site-nav .nav-item { padding: 12px 0; }
+}
+
+// The home page (rule 11).
+.hero { margin: 1.2em 0 2.2em; }
+.hero h1 { font-size: 2.4rem; margin-bottom: 0.3em; }
+.hero .lede { font-size: 1.3rem; line-height: 1.45; color: $heading-color; max-width: 40ch; margin-bottom: 0.6em; }
+.hero .for-whom { color: $brand-color; max-width: 60ch; }
+.hero .actions { margin-top: 1.2em; display: flex; flex-wrap: wrap; gap: 0.6em 1.4em; }
+.button-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 2px solid #FF8000;
+  font-weight: 500;
+  text-decoration: none !important;
+}
+.home h2 { margin-top: 2em; }
+.reader-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+}
+.reader-card {
+  margin: 0;
+  padding: 18px 18px 14px;
+  border: 1px solid $border-color-01;
+  border-top: 4px solid #FF8000;
+  border-radius: 10px;
+  background: $code-background-color;
+  h3 { font-size: 1.1rem; margin: 0 0 0.2em; }
+  .who { font-size: $small-font-size; color: $brand-color; margin-bottom: 0.6em; }
+  p { margin-bottom: 0.6em; }
+  ul { margin: 0 0 0.6em 1.1em; font-size: $small-font-size; }
+  .more { font-size: $small-font-size; font-weight: 500; }
+}
+
+// A list of pieces: title, then date, section and reading time, then the summary.
+.piece-list { list-style: none; margin: 0; padding: 0; max-width: 68ch; }
+.piece-list li { margin: 0 0 1.4em; }
+.piece-list .piece-title { font-size: 1.1rem; font-weight: 500; margin: 0; line-height: 1.35; }
+.piece-meta { font-size: $small-font-size; color: $brand-color; margin: 0.15em 0 0.25em; }
+.piece-summary { margin: 0; }
+.sections-list { list-style: none; margin: 0; padding: 0; max-width: 68ch; }
+.sections-list li { margin-bottom: 1em; }
+.about-author {
+  margin-top: 2.5em;
+  padding: 0.2em 0 0;
+  border-top: 1px solid $border-color-01;
+  max-width: 68ch;
+}
+.reader-filter { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0 0 1.5em; padding: 0; }
+.reader-filter a {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid $border-color-01;
+  border-radius: 999px;
+  font-size: $small-font-size;
+  text-decoration: none !important;
+}
+.reader-filter a[aria-current] { border-color: #FF8000; }
+.about-author h2 { margin-top: 1em; }

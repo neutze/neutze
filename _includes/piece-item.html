@@ -1,0 +1,15 @@
+{%- comment -%} One piece in a list: title, then date, section and reading time, then its summary when it has one (Publish Site, rules 4 and 11). {%- endcomment -%}
+{%- assign p = include.piece -%}
+{%- assign folders = p.path | split: "/" | pop -%}
+{%- assign section_key = folders | join: "/" -%}
+{%- assign top_key = section_key | split: "/" | first -%}
+{%- assign section = site.data.sections[section_key] | default: site.data.sections[top_key] -%}
+{%- assign words = p.content | strip_html | number_of_words -%}
+{%- assign minutes = words | divided_by: 220 | at_least: 1 -%}
+<li>
+  <p class="piece-title"><a href="{{ p.url | relative_url }}">{{ p.title | escape }}</a></p>
+  <p class="piece-meta"><time datetime="{{ p.date | date: '%Y-%m-%d' }}">{{ p.date | date: "%B %-d, %Y" }}</time>{% if section %} · {{ section.title }}{% endif %} · {{ minutes }} min read</p>
+  {%- if p.summary %}
+  <p class="piece-summary">{{ p.summary | escape }}</p>
+  {%- endif %}
+</li>

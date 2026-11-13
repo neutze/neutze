@@ -1,0 +1,17 @@
+{%- comment -%} A skip link first, then the name and the nav as plain links that wrap on a phone: no menu button, so the keyboard reaches every link (Publish Site, rules 12 and 22). {%- endcomment %}
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+
+  <div class="wrapper">
+    {%- assign default_paths = site.pages | map: "path" -%}
+    {%- assign page_paths = site.minima.nav_pages | default: default_paths -%}
+    {%- assign page_titles = site.pages | map: 'title' | compact %}
+    <a class="site-title" rel="author" href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>{{ site.title | escape }}</a>
+
+    {%- unless page_titles == empty %}
+      <nav class="site-nav" aria-label="Main">
+        {% include nav-items.html paths = page_paths %}
+      </nav>
+    {%- endunless %}
+  </div>
+</header>

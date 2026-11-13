@@ -1,0 +1,7 @@
+{%- comment -%} The site has its own dark mode (Publish Site, rule 12): Chrome's forced dark mode leaves a page that names its colour schemes alone, and Dark Reader one that carries its lock, so neither recolours the logo. {%- endcomment %}
+<meta name="color-scheme" content="light dark">
+<meta name="darkreader-lock">
+<link rel="preload" href="{{ "/assets/fonts/roboto-latin-wght-normal.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
+{%- comment -%} Raise v when an icon changes (and the stylesheet's v in head.html when the logo changes): browsers keep an icon long after its file has changed (Publish Site, rule 9). {%- endcomment %}
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}?v=2" sizes="any">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}?v=4">

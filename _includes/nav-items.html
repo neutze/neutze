@@ -1,0 +1,10 @@
+<div class="nav-items">
+  {%- for path in include.paths -%}
+  {%- assign hyperpage = site.pages | where: "path", path | first -%}
+  {%- if hyperpage.title %}
+  {%- assign here = false -%}
+  {%- if page.url == hyperpage.url -%}{%- assign here = "page" -%}{%- elsif hyperpage.url != "/" and page.url contains hyperpage.url -%}{%- assign here = "true" -%}{%- endif %}
+  <a class="nav-item" href="{{ hyperpage.url | relative_url }}"{% if here %} aria-current="{{ here }}"{% endif %}>{{ hyperpage.title | escape }}</a>
+  {%- endif -%}
+  {%- endfor %}
+</div>
